@@ -1,9 +1,15 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Terrain Data", menuName = "Terrain Data")]
 public class TerrainData : ScriptableObject
 {
-    public GameObject terrain;
+    public List<GameObject> terrains;
     public int maxInSuccession = 1;
+    private void Start()
+    {
+
+    }
+
 
 }
