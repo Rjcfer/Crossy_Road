@@ -29,15 +29,15 @@ public class TerrainGenerator : MonoBehaviour
         {
             int wichTerrain = -1;
             int terrainInSuccession = 1;
-            if (grassToSpawnAtStart > 0)
+            if (isStart && grassToSpawnAtStart > 0)
             {
                 wichTerrain = terrainData.FindIndex(t => t.isGrass);
+                terrainData.ForEach(t => Debug.Log(t.isGrass));
                 terrainInSuccession = Random.Range(1, terrainData[wichTerrain].maxInSuccession);
                 grassToSpawnAtStart--;
-
             }
 
-            if (wichTerrain <= 0 || grassToSpawnAtStart <= 0)
+            if (wichTerrain < 0 || grassToSpawnAtStart <= 0)
             {
                 wichTerrain = Random.Range(0, terrainData.Count);
                 terrainInSuccession = Random.Range(1, terrainData[wichTerrain].maxInSuccession);

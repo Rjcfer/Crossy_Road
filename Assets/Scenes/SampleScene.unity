@@ -424,6 +424,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2bfd3a2c09a5d484b8b8b962b2e6c886, type: 2}
   - {fileID: 11400000, guid: cfb53a2d5093f8c4dbbbef26d17d2cf6, type: 2}
   terrainHolder: {fileID: 1416816617}
+  grassToSpawnAtStart: 2
   currentPos: {x: 0, y: 0, z: 0}
 --- !u!4 &481325344
 Transform:
