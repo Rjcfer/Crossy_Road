@@ -8,9 +8,10 @@ public class TerrainGenerator : MonoBehaviour
     [SerializeField] private List<TerrainData> terrainData = new List<TerrainData>();
     [SerializeField] private Transform terrainHolder;
     private List<GameObject> currentTerrains = new List<GameObject>();
-    [SerializeField] private int grassToSpawnAtStart = 2;
-
+    [SerializeField] private int grassToSpawnAtStart = 4;
+    [SerializeField] private GameObject spawnGrass;
     [HideInInspector] public Vector3 currentPos = new Vector3(0, 0, 0);
+    private bool spawnGenerated = false;
 
     private void Start()
     {
@@ -27,26 +28,25 @@ public class TerrainGenerator : MonoBehaviour
     {
         if ((currentPos.x - playerPos.x < distFromPlayer) || isStart)
         {
-            int wichTerrain = -1;
-            int terrainInSuccession = 1;
-            if (isStart && grassToSpawnAtStart > 0)
+            if (!spawnGenerated)
             {
-                wichTerrain = terrainData.FindIndex(t => t.isGrass);
-                terrainData.ForEach(t => Debug.Log(t.isGrass));
-                terrainInSuccession = Random.Range(1, terrainData[wichTerrain].maxInSuccession);
-                grassToSpawnAtStart--;
+
+                for (int i = 0; i < grassToSpawnAtStart; i++)
+                {
+                    GameObject terrain = Instantiate(spawnGrass, currentPos, Quaternion.identity, terrainHolder);
+                    terrain.transform.SetParent(terrainHolder);
+                    currentTerrains.Add(terrain);
+                    currentPos.x++;
+                }
+                spawnGenerated = true;
             }
 
-            if (wichTerrain < 0 || grassToSpawnAtStart <= 0)
-            {
-                wichTerrain = Random.Range(0, terrainData.Count);
-                terrainInSuccession = Random.Range(1, terrainData[wichTerrain].maxInSuccession);
-            }
-
+            int wichTerrain = Random.Range(0, terrainData.Count);
+            int terrainInSuccession = Random.Range(1, terrainData[wichTerrain].maxInSuccession);
 
             for (int i = 0; i < terrainInSuccession; i++)
             {
-                GameObject terrain = Instantiate(terrainData[wichTerrain].terrains[Random.Range(0, terrainData[wichTerrain].terrains.Count)], currentPos, Quaternion.identity, terrainHolder); ;
+                GameObject terrain = Instantiate(terrainData[wichTerrain].terrains[Random.Range(0, terrainData[wichTerrain].terrains.Count)], currentPos, Quaternion.identity, terrainHolder);
                 terrain.transform.SetParent(terrainHolder);
                 currentTerrains.Add(terrain);
                 if (!isStart)
