@@ -9,6 +9,14 @@ public class FollowPlayer : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, player.transform.position + offset, smoothness);
+        if (player != null)
+        {
+            transform.position = Vector3.Lerp(transform.position, player.transform.position + offset, smoothness);
+        }
+        else
+        {
+            //jouer mort
+        }
+
     }
 }

@@ -8,6 +8,7 @@ public class TerrainGenerator : MonoBehaviour
     [SerializeField] private List<TerrainData> terrainData = new List<TerrainData>();
     [SerializeField] private Transform terrainHolder;
     private List<GameObject> currentTerrains = new List<GameObject>();
+    [SerializeField] private int grassToSpawnAtStart = 2;
 
     [HideInInspector] public Vector3 currentPos = new Vector3(0, 0, 0);
 
@@ -26,8 +27,22 @@ public class TerrainGenerator : MonoBehaviour
     {
         if ((currentPos.x - playerPos.x < distFromPlayer) || isStart)
         {
-            int wichTerrain = Random.Range(0, terrainData.Count);
-            int terrainInSuccession = Random.Range(1, terrainData[wichTerrain].maxInSuccession);
+            int wichTerrain = -1;
+            int terrainInSuccession = 1;
+            if (grassToSpawnAtStart > 0)
+            {
+                wichTerrain = terrainData.FindIndex(t => t.isGrass);
+                terrainInSuccession = Random.Range(1, terrainData[wichTerrain].maxInSuccession);
+                grassToSpawnAtStart--;
+
+            }
+
+            if (wichTerrain <= 0 || grassToSpawnAtStart <= 0)
+            {
+                wichTerrain = Random.Range(0, terrainData.Count);
+                terrainInSuccession = Random.Range(1, terrainData[wichTerrain].maxInSuccession);
+            }
+
 
             for (int i = 0; i < terrainInSuccession; i++)
             {

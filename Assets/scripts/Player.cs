@@ -1,24 +1,25 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     private Animator animator;
 
     [SerializeField] private TerrainGenerator terrainGenerator;
+    [SerializeField] private Text scoreText;
     private bool isHopping = false;
+    private int score = 0;
     private void Start()
     {
         animator = GetComponent<Animator>();
-        if (terrainGenerator == null)
-        {
-            Debug.LogError("TerrainGenarator not assigned! Please assign it in the inspector.");
-        }
     }
+
     private void Update()
     {
+        scoreText.text = "Score: " + score;
         if (Input.GetKeyDown(KeyCode.UpArrow) && !isHopping)
         {
-
+            score++;
             float zDifference = 0;
             if (transform.position.z % 1 != 0)
             {
@@ -62,6 +63,21 @@ public class Player : MonoBehaviour
         terrainGenerator.SpawnTerrain(false, transform.position);
     }
 
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.GetComponent<ObjectMovement>() != null)
+        {
+            if (collision.collider.GetComponent<ObjectMovement>().isLog)
+            {
+                transform.parent = collision.collider.transform;
+            }
+
+        }
+        else
+        {
+            transform.parent = null;
+        }
+    }
     public void FinishHop()
     {
         isHopping = false;

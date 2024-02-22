@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terrains:
   - {fileID: 3902872071042352423, guid: 486e915b4e72b6745bf2721bcfcfe6f5, type: 3}
+  - {fileID: 3902872071042352423, guid: 77ceede9798d23048a5687cfb5533f50, type: 3}
   maxInSuccession: 3

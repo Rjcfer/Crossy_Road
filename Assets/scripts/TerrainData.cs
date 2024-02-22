@@ -6,10 +6,6 @@ public class TerrainData : ScriptableObject
 {
     public List<GameObject> terrains;
     public int maxInSuccession = 1;
-    private void Start()
-    {
-
-    }
-
+    public bool isGrass;
 
 }
