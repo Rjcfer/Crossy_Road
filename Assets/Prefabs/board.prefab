@@ -120,4 +120,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedMax: 1
   speedMin: 3
+  pObject: {fileID: 3902872071042352423, guid: 486e915b4e72b6745bf2721bcfcfe6f5, type: 3}
   isLog: 1

@@ -681,6 +681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedMax: 2
   speedMin: 4
+  pObject: {fileID: 3685089415960682713, guid: 88496a3fdaf6e2b43a19230593c03fef, type: 3}
   isLog: 0
 --- !u!114 &5994874525241375474
 MonoBehaviour:
@@ -694,3 +695,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd34084042677946ad16caae4afb7d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverManager: {fileID: 6443955755106300618, guid: 8bb0dabbeca2c7146a0b89fe410c19a0, type: 3}

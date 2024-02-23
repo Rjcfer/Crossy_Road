@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+    [SerializeField] private Player player;
     [SerializeField] private Vector3 offset;
     [SerializeField] private float smoothness;
-
+    [SerializeField] private GameOverManager gameOverManager;
 
     void Update()
     {
@@ -15,7 +15,7 @@ public class FollowPlayer : MonoBehaviour
         }
         else
         {
-            //jouer mort
+            gameOverManager.Setup(player);
         }
 
     }
