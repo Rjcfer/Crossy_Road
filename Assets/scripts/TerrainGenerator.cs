@@ -20,7 +20,6 @@ public class TerrainGenerator : MonoBehaviour
             SpawnTerrain(true, new Vector3(0, 0, 0));
         }
         maxTerrainCount = currentTerrains.Count;
-
     }
 
 
@@ -30,7 +29,6 @@ public class TerrainGenerator : MonoBehaviour
         {
             if (!spawnGenerated)
             {
-
                 for (int i = 0; i < grassToSpawnAtStart; i++)
                 {
                     GameObject terrain = Instantiate(spawnGrass, currentPos, Quaternion.identity, terrainHolder);
@@ -40,10 +38,8 @@ public class TerrainGenerator : MonoBehaviour
                 }
                 spawnGenerated = true;
             }
-
             int wichTerrain = Random.Range(0, terrainData.Count);
             int terrainInSuccession = Random.Range(1, terrainData[wichTerrain].maxInSuccession);
-
             for (int i = 0; i < terrainInSuccession; i++)
             {
                 GameObject terrain = Instantiate(terrainData[wichTerrain].terrains[Random.Range(0, terrainData[wichTerrain].terrains.Count)], currentPos, Quaternion.identity, terrainHolder);
@@ -57,7 +53,6 @@ public class TerrainGenerator : MonoBehaviour
                         currentTerrains.RemoveAt(0);
                     }
                 }
-
                 currentPos.x++;
             }
         }

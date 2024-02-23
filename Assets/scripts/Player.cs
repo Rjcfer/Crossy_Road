@@ -27,32 +27,25 @@ public class Player : MonoBehaviour
 
             }
             MovePlayer(new Vector3(1, 0, zDifference));
-
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow) && !isHopping)
         {
-
             float xDifference = 0;
             if (transform.position.x % 1 != 0)
             {
                 xDifference = Mathf.Round(transform.position.x) - transform.position.x;
-
             }
             MovePlayer(new Vector3(xDifference, 0, 1));
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow) && !isHopping)
         {
-
             float xDifference = 0;
             if (transform.position.x % 1 != 0)
             {
                 xDifference = Mathf.Round(transform.position.x) - transform.position.x;
-
             }
             MovePlayer(new Vector3(xDifference, 0, -1));
-
         }
-
     }
 
     private void MovePlayer(Vector3 difference)

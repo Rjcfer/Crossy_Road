@@ -17,4 +17,4 @@ MonoBehaviour:
   - {fileID: 955372970580107405, guid: 93d0a9fd34085d54290f41dcb3968224, type: 3}
   - {fileID: 955372970580107405, guid: 8f7b4ba2afd08a840b2fce48c3ce164a, type: 3}
   maxInSuccession: 4
-  isGrass: 1
+  isSpawn: 0
