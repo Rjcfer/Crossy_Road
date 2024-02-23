@@ -7,5 +7,6 @@ public class TerrainData : ScriptableObject
     public List<GameObject> terrains;
     public int maxInSuccession = 1;
     public bool isSpawn;
+    public bool isStart;
 
 }

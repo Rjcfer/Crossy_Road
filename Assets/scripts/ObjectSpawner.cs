@@ -15,6 +15,27 @@ public class ObjectSpawner : MonoBehaviour
 
     private IEnumerator SpawnVehicle()
     {
+
+        for (int i = 1; i < 10; i++)
+        {
+            GameObject go = null;
+
+            if (isRightSide)
+            {
+                go = Instantiate(objectToSpawn,
+                new Vector3(spawnPos.position.x, spawnPos.position.y, 2 * i),
+                Quaternion.identity);
+                go.transform.Rotate(new Vector3(0, 180, 0));
+            }
+            else
+            {
+                go = Instantiate(objectToSpawn,
+                 new Vector3(spawnPos.position.x, spawnPos.position.y, -2 * i),
+                 Quaternion.identity);
+            }
+            yield return new WaitForSeconds(Random.Range(minSeperationTime, maxSeperationTime));
+        }
+
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(minSeperationTime, maxSeperationTime));
@@ -23,7 +44,6 @@ public class ObjectSpawner : MonoBehaviour
             {
                 go.transform.Rotate(new Vector3(0, 180, 0));
             }
-
 
         }
     }

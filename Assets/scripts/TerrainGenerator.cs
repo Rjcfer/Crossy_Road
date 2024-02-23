@@ -12,6 +12,7 @@ public class TerrainGenerator : MonoBehaviour
     [SerializeField] private GameObject spawnGrass;
     [HideInInspector] public Vector3 currentPos = new Vector3(0, 0, 0);
     private bool spawnGenerated = false;
+    private bool pastWaterLeft = false;
 
     private void Start()
     {
@@ -26,6 +27,7 @@ public class TerrainGenerator : MonoBehaviour
 
     public void SpawnTerrain(bool isStart, Vector3 playerPos)
     {
+        GameObject terrain = null;
         if ((currentPos.x - playerPos.x < distFromPlayer) || isStart)
         {
             if (!spawnGenerated)
@@ -33,7 +35,7 @@ public class TerrainGenerator : MonoBehaviour
 
                 for (int i = 0; i < grassToSpawnAtStart; i++)
                 {
-                    GameObject terrain = Instantiate(spawnGrass, currentPos, Quaternion.identity, terrainHolder);
+                    terrain = Instantiate(spawnGrass, currentPos, Quaternion.identity, terrainHolder);
                     terrain.transform.SetParent(terrainHolder);
                     currentTerrains.Add(terrain);
                     currentPos.x++;
@@ -46,7 +48,18 @@ public class TerrainGenerator : MonoBehaviour
 
             for (int i = 0; i < terrainInSuccession; i++)
             {
-                GameObject terrain = Instantiate(terrainData[wichTerrain].terrains[Random.Range(0, terrainData[wichTerrain].terrains.Count)], currentPos, Quaternion.identity, terrainHolder);
+                TerrainData ter = terrainData[wichTerrain];
+                ter.isStart = isStart;
+                if (ter.name == "Water")
+                {
+
+                    terrain = Instantiate(ter.terrains[pastWaterLeft ? 0 : 1], currentPos, Quaternion.identity, terrainHolder);
+                    pastWaterLeft = !pastWaterLeft;
+                }
+                else
+                {
+                    terrain = Instantiate(ter.terrains[Random.Range(0, terrainData[wichTerrain].terrains.Count)], currentPos, Quaternion.identity, terrainHolder);
+                }
                 terrain.transform.SetParent(terrainHolder);
                 currentTerrains.Add(terrain);
                 if (!isStart)

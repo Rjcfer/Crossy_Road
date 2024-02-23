@@ -7,6 +7,7 @@ public class KillPlayer : MonoBehaviour
     {
         if (other.gameObject.GetComponent<Player>() != null)
         {
+
             gameOverManager.Setup(other.gameObject.GetComponent<Player>());
         }
     }

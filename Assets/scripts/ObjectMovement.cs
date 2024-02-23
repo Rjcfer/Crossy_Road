@@ -8,6 +8,10 @@ public class ObjectMovement : MonoBehaviour
 
     void Update()
     {
+        if (transform.position.z > 28 || transform.position.z < -28)
+        {
+            Destroy(gameObject);
+        }
         transform.Translate(Vector3.forward * UnityEngine.Random.Range(speedMin, speedMax) * Time.deltaTime);
     }
 }
