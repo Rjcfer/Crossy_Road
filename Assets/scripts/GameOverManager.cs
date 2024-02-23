@@ -12,9 +12,12 @@ public class GameOverManager : MonoBehaviour
     public void Setup(Player player)
     {
         int scoreTemp = player.getScore();
-        Destroy(player);
+        for (var i = player.transform.childCount - 1; i >= 0; i--)
+        {
+            Object.Destroy(player.transform.GetChild(i).gameObject);
+        }
         gameObject.SetActive(true);
-        Debug.Log(player.getScore());
+
         pointsText.text = "Score: " + scoreTemp.ToString();
 
         isGameOver = true;
