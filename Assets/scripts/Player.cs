@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] private TerrainGenerator terrainGenerator;
     [SerializeField] private Text scoreText;
     [SerializeField] private GameOverManager gameOverManager;
+    [SerializeField] private AudioSource jumpSound;
     private bool isHopping = false;
     private int score = 0;
     private void Start()
@@ -79,6 +80,7 @@ public class Player : MonoBehaviour
 
     private void MovePlayer(Vector3 difference)
     {
+        jumpSound.Play();
         animator.SetTrigger("hop");
         isHopping = true;
         transform.position = (transform.position + difference);
