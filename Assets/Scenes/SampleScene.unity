@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 30005863}
   - component: {fileID: 30005865}
   - component: {fileID: 30005864}
+  - component: {fileID: 30005866}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -206,6 +207,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30005862}
   m_Mesh: {fileID: 4300004, guid: a781aa61e9361024cac36d44dda87c3a, type: 3}
+--- !u!65 &30005866
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30005862}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.008, y: 0.0040000007, z: 0.0100000035}
+  m_Center: {x: 0.0029335883, y: 0.0019634892, z: -0.0050185476}
 --- !u!1 &70992179
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +239,7 @@ GameObject:
   - component: {fileID: 70992180}
   - component: {fileID: 70992182}
   - component: {fileID: 70992181}
+  - component: {fileID: 70992183}
   m_Layer: 0
   m_Name: LegR
   m_TagString: Untagged
@@ -289,6 +312,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70992179}
   m_Mesh: {fileID: 4300000, guid: a781aa61e9361024cac36d44dda87c3a, type: 3}
+--- !u!65 &70992183
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70992179}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030000005, y: 0.0049999994, z: 0.0050000027}
+  m_Center: {x: -0.0005000202, y: -0.0024800135, z: 0.00049301743}
 --- !u!1 &265154343
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,6 +344,7 @@ GameObject:
   - component: {fileID: 265154344}
   - component: {fileID: 265154346}
   - component: {fileID: 265154345}
+  - component: {fileID: 265154347}
   m_Layer: 0
   m_Name: Player Object
   m_TagString: Untagged
@@ -373,6 +418,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265154343}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &265154347
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265154343}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.9999999, y: 0.99999994, z: 0.9999999}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &295880441
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,6 +1040,7 @@ GameObject:
   - component: {fileID: 1368401164}
   - component: {fileID: 1368401166}
   - component: {fileID: 1368401165}
+  - component: {fileID: 1368401167}
   m_Layer: 0
   m_Name: LegL
   m_TagString: Untagged
@@ -1046,6 +1113,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368401163}
   m_Mesh: {fileID: 4300002, guid: a781aa61e9361024cac36d44dda87c3a, type: 3}
+--- !u!65 &1368401167
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368401163}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030000024, y: 0.0049999994, z: 0.005000003}
+  m_Center: {x: 0.00050000177, y: -0.0024626928, z: 0.0005348767}
 --- !u!1 &1416816616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,6 +1175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1596268982}
   - component: {fileID: 1596268983}
+  - component: {fileID: 1596268984}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Untagged
@@ -1121,6 +1210,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596268981}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1596268984
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596268981}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1720684475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,6 +1242,7 @@ GameObject:
   - component: {fileID: 1720684476}
   - component: {fileID: 1720684478}
   - component: {fileID: 1720684477}
+  - component: {fileID: 1720684479}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -1204,6 +1315,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1720684475}
   m_Mesh: {fileID: 4300006, guid: a781aa61e9361024cac36d44dda87c3a, type: 3}
+--- !u!65 &1720684479
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720684475}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0059999996, y: 0.007999996, z: 0.008000002}
+  m_Center: {x: 0.0030029023, y: 0.003963709, z: -0.0019787792}
 --- !u!1 &1969375332
 GameObject:
   m_ObjectHideFlags: 0
